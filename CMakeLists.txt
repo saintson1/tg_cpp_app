@@ -17,7 +17,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_GENERATOR_PLATFORM x64)
 
-# include_directories(${PROJECT_SOURCE_DIR}/external/include)
-# set(CMAKE_LIBRARY_PATH ${PROJECT_SOURCE_DIR}/external/library)
+include_directories(${PROJECT_SOURCE_DIR}/external/includes)
+
+
+find_package(Td 1.8.30 REQUIRED)
 
 add_executable(${PROJECT_NAME} ${SOURCE_DIR}/main.cpp)
+target_link_libraries(${PROJECT_NAME} PRIVATE Td::TdJson)

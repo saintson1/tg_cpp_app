@@ -20,5 +20,5 @@
     2. build prog from CMakeList.txt
     3. copy tdlib.dll files from tdlib build dir
 
-exclude info:
+# exclude info:
 1. https://habr.com/ru/companies/selectel/articles/771496/

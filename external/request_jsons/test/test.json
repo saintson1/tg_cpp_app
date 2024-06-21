@@ -1,0 +1,10 @@
+{
+  "@type": "users.getFullUser",
+  "phone_number": "+79118245211",
+  "phone_code_hash": "+79118245211",
+  "phone_code": "+79118245211",
+  "email_verification":
+    {
+      
+    }
+}

@@ -19,8 +19,24 @@ set(CMAKE_GENERATOR_PLATFORM x64)
 
 include_directories(${PROJECT_SOURCE_DIR}/external/includes)
 
-
+set(DTd_DIR "X:/TGRKIT/LIB/tdlib/lib/cmake/Td")
 find_package(Td 1.8.30 REQUIRED)
 
+set(BOOST_ROOT "X:/TGRKIT/builds/boost")
+set(BOOST_INCLUDEDIR "X:/TGRKIT/builds/boost/include/boost-1_85")
+find_package(Boost COMPONENTS filesystem)
+
 add_executable(${PROJECT_NAME} ${SOURCE_DIR}/main.cpp)
-target_link_libraries(${PROJECT_NAME} PRIVATE Td::TdJson)
+
+add_library(client STATIC ${SOURCE_DIR}/client/client.cpp)
+
+target_link_libraries(client PRIVATE Td::TdJson)
+target_link_libraries(${PROJECT_NAME} PRIVATE client)
+
+add_library(file STATIC ${SOURCE_DIR}/tools/file/file.cpp)
+
+if(Boost_FOUND)
+  target_link_libraries(file PRIVATE ${Boost_LIBRARIES})
+else()
+
+endif()

@@ -1,10 +1,21 @@
+#include <string>
 #include <iostream>
-#include <tdlib_includes/td/telegram/td_json_client.h>
+#include <fstream>
+
+#include "def.hpp"
 
 int main( int argv, char **argc )
 {
-  int client_id = td_create_client_id();
-  std::cout << client_id << std::endl;
+  tg_cpp_app::client new_client;
+
+  std::ifstream filee("E:/visual_studio/tg_cpp_app/external/auth/auth_0.json");
+  nlohmann::json req;
+
+  if (filee.is_open())
+    filee >> req;
+  filee.close();
+
+  nlohmann::json ans = new_client.send(req.dump());
 
   return 0;
 }

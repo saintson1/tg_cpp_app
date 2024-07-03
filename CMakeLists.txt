@@ -30,10 +30,10 @@ add_executable(${PROJECT_NAME} ${SOURCE_DIR}/main.cpp)
 
 add_library(client STATIC ${SOURCE_DIR}/client/client.cpp)
 
+add_library(file STATIC ${SOURCE_DIR}/tools/file/file.cpp)
+
 target_link_libraries(client PRIVATE Td::TdJson)
 target_link_libraries(${PROJECT_NAME} PRIVATE client)
-
-add_library(file STATIC ${SOURCE_DIR}/tools/file/file.cpp)
 
 if(Boost_FOUND)
   target_link_libraries(file PRIVATE ${Boost_LIBRARIES})

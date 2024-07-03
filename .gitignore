@@ -1,3 +1,5 @@
 .vscode/
 build/
 td_api_2.tl
+external/includes/boost/
+!external/includes/boost/filesystem/. 

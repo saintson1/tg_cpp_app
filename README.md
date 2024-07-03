@@ -14,6 +14,8 @@ to build proj:
     set(BOOST_INCLUDEDIR "PATH_TO_BOOST_BUILD_DIR/include/boost-1_85")
     find_package(Boost COMPONENTS filesystem)
     ```
+- copy header files dir to ./external/includes/boost
+
 # to execute program:
   - build prog with cmake
     1. create build dir

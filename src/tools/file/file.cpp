@@ -64,6 +64,16 @@ namespace tg_cpp_app
   };
 
   const std::vector<file::content_node::content_node_variant_type> & file::content_node::get_content() { return contents_; };
+  
+  std::vector<std::string> file::content_node::get_string_content()
+  {
+    std::vector<std::string> string_content;
+
+    for (auto & node : contents_)
+      if (std::get_if<std::string>(&node))
+        string_content.push_back(std::get<std::string>(node));
+    return string_content;
+  };
 
   const std::vector<file::content_node::content_node_variant_type> file::content_node::operator[]( const std::string & key )
   {
@@ -92,6 +102,8 @@ namespace tg_cpp_app
           ans.push_back(std::get<std::string>(content));
     return ans;
   };
+
+  const std::string & file::content_node::get_name() { return name_; };
 
   file::content_node * file::req_search (const boost::filesystem::path &entity)
   {
@@ -162,5 +174,27 @@ namespace tg_cpp_app
   file::~file()
   {
     delete content_;
+  };
+
+  std::string file::get_content() const
+  {
+    for (auto & content : content_->get_string_content())
+      return content;
+    return "";
+  };
+
+  std::vector<file::content_node *> file::get_subfiles() const
+  {
+    std::vector<content_node *> subfiles;
+
+    for (auto & content : content_->get_content())
+      if (std::get_if<content_node *>(&content))
+        subfiles.emplace_back(std::get<content_node *>(content));
+    return subfiles;
+  };
+
+  std::string file::get_filename() const
+  {
+    return path_.filename().generic_string();
   };
 };

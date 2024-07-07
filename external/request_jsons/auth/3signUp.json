@@ -1,0 +1,7 @@
+{
+  "@type": "auth.signUp",
+  "phone_number": "+79118245211",
+  "phone_code_hash": "",
+  "first_name": "",
+  "last_name": ""
+}

@@ -10,6 +10,7 @@
 #include <fstream>
 
 #include <boost/filesystem.hpp>
+
 namespace tg_cpp_app
 {
   class file
@@ -35,9 +36,11 @@ namespace tg_cpp_app
 
     public:
       const std::vector<content_node_variant_type> & get_content();
+      std::vector<std::string> get_string_content();
       const std::vector<content_node_variant_type> operator[]( const std::string & key );
       content_node_variant_type operator[]( int key );
       const std::vector<std::string> find_content( const std::string & find_name );
+      const std::string & get_name();
     };
   private:
     boost::filesystem::path path_;
@@ -53,6 +56,11 @@ namespace tg_cpp_app
     file(file && new_file);
     file & operator=(file && new_file);
     ~file();
+
+  public:
+    std::string get_content() const;
+    std::vector<content_node *> get_subfiles() const;
+    std::string get_filename() const;
   };
 };
 #endif // _file_hpp__

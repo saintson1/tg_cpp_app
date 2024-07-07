@@ -1,0 +1,8 @@
+{
+  "@type": "auth.sendCode",
+  "phone_number": "+79118245211",
+  "settings":
+  {
+    "_": "codeSettings"
+  }
+}

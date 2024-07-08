@@ -3,20 +3,20 @@
 
 #include <string>
 
-#include "../def.hpp"
+#include "../client/client.hpp"
+#include "../tools/tools_def.hpp"
 
 namespace tg_cpp_app {
   class auth
   {
 private:
-  const client &cli_;
+  client & cli_;
+  json requests_;
 
-  std::string path_;
 public:
-    auth( const client &new_cli, const std::string new_path_to_json_dir );
+    auth( client & new_cli, const std::string & new_path_to_json_dir );
 
     ~auth();
-
   };
 }
 

@@ -5,4 +5,6 @@
 
 #include "file/file.hpp"
 
+#include "file/json/json.hpp"
+
 #endif // _tools_hpp__

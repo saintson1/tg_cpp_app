@@ -8,7 +8,9 @@
 
 namespace tg_cpp_app
 {
-  json::json( nlohmann::json & new_content ) : content_(new_content) {  };
+  json::json( const nlohmann::json & new_content ) : content_(new_content) {  };
+
+  json::json( nlohmann::json && new_content ) : content_(std::move(new_content)) {  };
 
   json::json( const file & new_file )
   {
@@ -27,10 +29,7 @@ namespace tg_cpp_app
       content_[new_file.get_filename()] = nullptr;
   };
 
-  json::json( const std::string & new_str_json )
-  {
-    content_ = nlohmann::json::parse(new_str_json);
-  };
+  // json::json( const std::string & new_str_json ) : content_(nlohmann::json::parse(new_str_json)) {  };
 
   json::json( const json & new_json ) : content_(new_json.content_) {  };
 
@@ -47,6 +46,13 @@ namespace tg_cpp_app
     content_ = std::move(new_json.content_);
     return *this;
   };
+
+  json & json::operator=( const nlohmann::json & new_content )
+  {
+    content_ = new_content;
+    return *this;
+  };
+
 
   json::~json() {  };
 
@@ -67,4 +73,15 @@ namespace tg_cpp_app
       return content_[key] = nullptr;
     return find_res;
   };
+
+  nlohmann::json::iterator json::begin()
+  {
+    return content_.begin();
+  };
+
+  nlohmann::json::iterator json::end()
+  {
+    return content_.end();
+  };
 };
+

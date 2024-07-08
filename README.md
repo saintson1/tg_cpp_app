@@ -3,7 +3,7 @@ to build proj:
 # to build tdlib:
 - install tdlib proj : (zip_installer)[https://tdlib.github.io/td/build.html]
 - build td lib by officale guide
-- to link tdlibs lib for you proj, add this cmake command in build dir: `cmake -DCMAKE_BUILD_TYPE=Release -DTd_DIR=<PATH_TO_TDLIB_BUILD>>\lib\cmake\Td\ ..`
+- to link tdlibs lib for you proj, add this cmake command in build dir: `cmake -DCMAKE_BUILD_TYPE=Release -DTd_DIR=<PATH_TO_TDLIB_BUILD>\lib\cmake\Td\ ..`
 
 # to build boost:
 - install boost by officale web-site

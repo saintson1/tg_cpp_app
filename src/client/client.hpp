@@ -11,11 +11,11 @@ private:
   void *instance_ptr_;
 public:
     client();
-    client( const client &new_client );
-    client( client &&new_client );
+    client( const client & new_client );
+    client( client && new_client );
 
-    client & operator=( const client &new_client );
-    client & operator=( client &&new_client );
+    client & operator=( const client & new_client );
+    client & operator=( client && new_client );
 
     ~client();
 

@@ -1,0 +1,14 @@
+{
+  "@type": "setAuthenticationPhoneNumber",
+  "phone_number": "+79118245211",
+  "settings":
+  {
+    "allow_flash_call":true,
+    "allow_missed_call":true,
+    "is_current_phone_number": true,
+    "has_unknown_phone_number":false,
+    "allow_sms_retriever_api":false,
+    "firebase_authentication_settings": null,
+    "authentication_tokens": null
+  }
+}

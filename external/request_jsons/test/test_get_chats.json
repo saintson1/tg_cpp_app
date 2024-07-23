@@ -1,0 +1,8 @@
+{
+  "@type": "getChats",
+  "chat_list":
+  {
+    "@type": "chatListMain"
+  },
+  "limit": 10
+}

@@ -15,7 +15,6 @@ private:
 
 public:
     auth( client & new_cli, const std::string & new_path_to_json_dir );
-
     ~auth();
   };
 }

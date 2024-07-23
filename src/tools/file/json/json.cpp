@@ -83,5 +83,7 @@ namespace tg_cpp_app
   {
     return content_.end();
   };
+
+  bool json::is_empty() { return content_.empty(); };
 };
 

@@ -1,8 +1,9 @@
 #ifndef _client_hpp__
 #define _client_hpp__
 
-#include "../def.hpp"
 #include <string>
+
+#include "../tools/tools_def.hpp"
 
 namespace tg_cpp_app {
   class client
@@ -19,7 +20,9 @@ public:
 
     ~client();
 
-    nlohmann::json send( std::string request );
+    void send( const std::string & request );
+    json execute( const std::string & request );
+    json receive( double timeout );
   };
 }
 

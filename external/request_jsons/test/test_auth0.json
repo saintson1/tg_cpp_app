@@ -1,0 +1,17 @@
+{
+  "@type": "setTdlibParameters",
+  "use_test_dc": true,
+  "database_directory": "E:/visual_studio/tg_cpp_app/src",
+  "files_directory": "E:/visual_studio/tg_cpp_app/src",
+  "database_encryption_key": null,
+  "use_file_database": false,
+  "use_chat_info_database": false,
+  "use_message_database": false,
+  "use_secret_chats": false,
+  "api_id": 25248628,
+  "api_hash": "69b6bc23e11da3fe492262ff3b8acd9a",
+  "system_language_code": "en",
+  "device_model": "desktop",
+  "system_version": null,
+  "application_version": "1.8.30"
+}

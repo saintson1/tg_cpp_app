@@ -36,6 +36,9 @@ namespace tg_cpp_app
 
     nlohmann::json::iterator begin();
     nlohmann::json::iterator end();
+
+    bool is_empty();
+
   };
 };
 #endif // _json_hpp__

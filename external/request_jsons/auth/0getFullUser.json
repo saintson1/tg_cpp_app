@@ -1,7 +1,4 @@
 {
   "@type": "users.getFullUser",
-  "id":
-  {
-    "_": "inputUserSelf"
-  }
+  "id": "inputUserSelf"
 }
